@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, MessageSquare, ShieldCheck, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, MessageSquare, CheckCircle2, FileText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -10,125 +11,86 @@ export function HeroSection() {
   const whatsappUrl = buildWhatsAppUrl();
 
   return (
-    <section className="relative overflow-hidden bg-[#F7F5F0] pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32 border-b border-[#E5E0D7]">
-      <Container size="wide">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Headline, Copy, and CTAs (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            {/* Kicker / Specialization Badges */}
-            <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#E5E0D7] shadow-xs text-xs font-semibold text-[#172B40]">
-              <span className="w-2 h-2 rounded-full bg-[#B58A58]" />
-              <span>Electrical</span>
-              <span className="text-[#687381]">•</span>
-              <span>Carpentry</span>
-              <span className="text-[#687381]">•</span>
-              <span>Painting</span>
-              <span className="text-[#687381]">•</span>
-              <span>Ceiling</span>
-            </div>
+    <section
+      id="hero-section"
+      className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[#172B40]"
+    >
+      {/* 1. Full-Screen Edge-to-Edge Background Image */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
+        <Image
+          src="/images/hero-bg.avif"
+          alt="Premium interior contracting and architecture"
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-center"
+        />
 
-            {/* Main Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#172B40] leading-[1.12]">
+        {/* Subtle multi-layer dark overlay for crystal-clear text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#172B40]/95 via-[#172B40]/80 to-[#172B40]/50" />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* 2. Vertically Centered Content Layer (On Top of Background) */}
+      <div className="relative z-10 w-full pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24">
+        <Container size="wide">
+          <div className="max-w-3xl text-left space-y-6 sm:space-y-8">
+          
+            {/* Main Heading */}
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] drop-shadow-md">
               Transform Your Space.{" "}
-              <span className="block text-[#172B40]">Built With Skill.</span>{" "}
+              <span className="block text-white">Built With Skill.</span>{" "}
               <span className="text-[#B58A58]">Finished With Perfection.</span>
             </h1>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-lg lg:text-xl text-[#687381] leading-relaxed max-w-2xl">
+            {/* Supporting Description */}
+            <p className="text-base sm:text-lg md:text-xl text-[#E9E3D9] leading-relaxed max-w-2xl font-normal drop-shadow-sm">
               Professional, on-site contracting solutions for modern residences and commercial spaces. Expertly coordinated concealed electrical wiring, bespoke modular carpentry, luxury wall coatings, and designer false ceilings executed with uncompromising craftsmanship.
             </p>
 
-            {/* CTAs */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row flex-wrap gap-3.5 pt-2">
               <Button
-                variant="primary"
+                variant="accent"
                 size="lg"
                 href="/projects"
                 rightIcon={<ArrowRight className="w-5 h-5" />}
+                className="shadow-lg"
               >
                 Explore Our Work
-              </Button>
-
-              <Button
-                variant="whatsapp"
-                size="lg"
-                href={whatsappUrl}
-                isExternal
-                leftIcon={<MessageSquare className="w-5 h-5" />}
-              >
-                Chat on WhatsApp
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
                 href="/contact"
+                leftIcon={<FileText className="w-5 h-5" />}
+                className="border-white/40 text-white hover:bg-white/15 hover:border-white shadow-sm"
               >
-                Get an Estimate
+                Get a Free Estimate
               </Button>
+
             </div>
 
             {/* Quick Proof Points */}
-            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#172B40] font-medium">
+            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-white/90 font-medium drop-shadow-sm">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#21865B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
                 <span>Authentic On-Site Photos</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#21865B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
                 <span>Direct Contractor Supervision</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#21865B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
                 <span>Transparent Itemized Estimates</span>
               </div>
             </div>
           </div>
-
-          {/* Right Column: Hero Video / Media Showcase (5 cols) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-xl border border-[#E5E0D7]">
-              {/* Media Container with Video and Overlay */}
-              <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#172B40]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="/images/about-work.png"
-                  className="w-full h-full object-cover"
-                >
-                  <source src="/videos/hero-bg.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#172B40]/80 via-transparent to-transparent pointer-events-none" />
-
-                {/* Floating Authentic Work Tag */}
-                <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm text-[#172B40] text-xs font-semibold shadow-md flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#21865B]" />
-                  <span>Real On-Site Project</span>
-                </div>
-
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <div className="text-xs uppercase tracking-wider font-semibold text-[#B58A58]">
-                    Master Craftsmanship
-                  </div>
-                  <div className="text-lg font-bold">
-                    Precision Finishes & Direct On-Site Quality
-                  </div>
-                  <div className="text-xs text-[#E9E3D9]/80 mt-1">
-                    Concealed Wiring • Modular Joinery • False Ceilings • Painting
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }

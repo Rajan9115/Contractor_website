@@ -11,7 +11,7 @@ interface VideoCardProps {
 
 export function VideoCard({
   src,
-  poster = "/images/about-work.png",
+  poster = "/images/electrical/house-wiring.png",
   title = "On-Site Work Video",
 }: VideoCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);

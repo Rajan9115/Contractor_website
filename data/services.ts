@@ -31,7 +31,7 @@ export const servicesData: ServiceDetail[] = [
       "Cable pulling, testing & switchboard mounting",
       "Final luminaire installation, load testing & handover",
     ],
-    coverImage: "/images/projects/project-electrical.jpeg",
+    coverImage: "/images/electrical/house-wiring.png",
     iconName: "Zap",
   },
   {
@@ -64,7 +64,7 @@ export const servicesData: ServiceDetail[] = [
       "Carcass fabrication, edge-banding & modular assembly",
       "Hardware fitting, alignment calibration & final polishing",
     ],
-    coverImage: "/images/projects/project-1.png",
+    coverImage: "/images/carpentry/luxury-kitchen.jpg",
     iconName: "Hammer",
   },
   {
@@ -97,7 +97,7 @@ export const servicesData: ServiceDetail[] = [
       "Alkali-resistant primer application",
       "Precision double-finish topcoats & spotless site clean-up",
     ],
-    coverImage: "/images/projects/project-2.png",
+    coverImage: "/images/painting/painting-1.jpg",
     iconName: "Paintbrush",
   },
   {
@@ -130,8 +130,7 @@ export const servicesData: ServiceDetail[] = [
       "Board screwing, joint taping & POP finishing",
       "Spotlight cutouts, cove LED channel placement & painting",
     ],
-    coverImage: "/images/projects/project-3.png",
+    coverImage: "/images/ceiling/ceiling-1.jpg",
     iconName: "Layers",
   },
 ];
-
