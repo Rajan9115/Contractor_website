@@ -2,14 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, MessageSquare, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function HeroSection() {
-  const whatsappUrl = buildWhatsAppUrl();
-
   return (
     <section
       id="hero-section"
@@ -36,17 +33,15 @@ export function HeroSection() {
       <div className="relative z-10 w-full pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24">
         <Container size="wide">
           <div className="max-w-3xl text-left space-y-6 sm:space-y-8">
-          
             {/* Main Heading */}
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] drop-shadow-md">
-              Transform Your Space.{" "}
-              <span className="block text-white">Built With Skill.</span>{" "}
-              <span className="text-[#B58A58]">Finished With Perfection.</span>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text- leading-[1.15] drop-shadow-md">
+              <span className="text-white">Built with Precision.{" "}</span>
+              <span className="block text-[#B58A58]">Finished to Perfection.</span>
             </h1>
 
-            {/* Supporting Description */}
-            <p className="text-base sm:text-lg md:text-xl text-[#E9E3D9] leading-relaxed max-w-2xl font-normal drop-shadow-sm">
-              Professional, on-site contracting solutions for modern residences and commercial spaces. Expertly coordinated concealed electrical wiring, bespoke modular carpentry, luxury wall coatings, and designer false ceilings executed with uncompromising craftsmanship.
+            {/* Supporting Description / Subheading */}
+            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-normal drop-shadow-xs">
+              Full-scope contracting across custom carpentry, modern false ceilings, certified wiring, and flawless painting. We turn bare spaces into refined environments with master craft and zero vendor friction.
             </p>
 
             {/* CTA Buttons */}
