@@ -9,9 +9,13 @@ export const projectsData: Project[] = [
     summary:
       "Bespoke floor-to-ceiling modular wardrobe installation with soft-close hardware, interior drawer organizers, and durable laminate finish.",
     description:
-      "Complete custom wardrobe fabrication executed using calibrated marine plywood. Featured precision edge-banding, concealed soft-close telescopic channels, and customized hanging sections tailored to client requirements.",
+      "Complete custom wardrobe fabrication executed using calibrated marine plywood. Featured precision edge-banding, concealed soft-close telescopic channels, and customized hanging sections tailored to client requirements. Every internal partition was dimensioned to maximize storage while maintaining seamless exterior alignment with the ceiling cove line.",
     coverImage: "/images/projects/project-1.png",
-    images: ["/images/projects/project-1.png"],
+    images: [
+      "/images/projects/project-1.png",
+      "/images/about.png",
+      "/images/journey-3.png",
+    ],
     featured: true,
     location: "Residential Apartment, India",
     completedAt: "Recent Handover",
@@ -30,9 +34,13 @@ export const projectsData: Project[] = [
     summary:
       "Contemporary gypsum false ceiling featuring multi-tier drop design, perimeter warm-white LED cove light troughs, and flush spotlight cutouts.",
     description:
-      "Installed heavy-duty galvanized iron (GI) framing grid leveled with laser accuracy. Plastered with paper tape and jointing compound to deliver a monolithic, crack-free false ceiling with integrated indirect illumination.",
+      "Installed heavy-duty galvanized iron (GI) framing grid leveled with laser accuracy. Plastered with paper tape and jointing compound to deliver a monolithic, crack-free false ceiling with integrated indirect illumination. Integrated service hatches and designated wiring drops for chandeliers and smart LED lighting strips.",
     coverImage: "/images/projects/project-3.png",
-    images: ["/images/projects/project-3.png"],
+    images: [
+      "/images/projects/project-3.png",
+      "/images/about-work.png",
+      "/images/journey-1.png",
+    ],
     featured: true,
     location: "Private Residence, India",
     completedAt: "Recent Handover",
@@ -51,9 +59,13 @@ export const projectsData: Project[] = [
     summary:
       "Comprehensive surface preparation, dual-coat acrylic putty leveling, and premium washable luxury emulsion finish.",
     description:
-      "Restored uneven wall plaster with thorough surface scraping, deep crack filling, and machine sanding. Coated with alkali-resistant primer and multiple topcoats of premium washable emulsion for a rich, uniform sheen.",
+      "Restored uneven wall plaster with thorough surface scraping, deep crack filling, and machine sanding. Coated with alkali-resistant primer and multiple topcoats of premium washable emulsion for a rich, uniform sheen. Completed with clean border lines along door frames and false ceiling moldings without any paint bleed.",
     coverImage: "/images/projects/project-2.png",
-    images: ["/images/projects/project-2.png"],
+    images: [
+      "/images/projects/project-2.png",
+      "/images/journey-1.png",
+      "/images/about.png",
+    ],
     featured: true,
     location: "Contemporary Home, India",
     completedAt: "Recent Handover",
@@ -72,9 +84,14 @@ export const projectsData: Project[] = [
     summary:
       "Complete residential concealed electrical installation, load-balanced circuit breakers, and modular switchboard integration.",
     description:
-      "Re-engineered home electrical circuitry with fire-retardant copper conduits, properly grounded copper earthing, dedicated heavy-appliance lines for ACs and geysers, and aesthetic modular faceplates.",
+      "Re-engineered home electrical circuitry with fire-retardant copper conduits, properly grounded copper earthing, dedicated heavy-appliance lines for ACs and geysers, and aesthetic modular faceplates. All circuits balanced across distribution breakers with strict safety testing.",
     coverImage: "/images/projects/project-electrical.jpeg",
-    images: ["/images/projects/project-electrical.jpeg"],
+    images: [
+      "/images/projects/project-electrical.jpeg",
+      "/images/journey-2.png",
+      "/images/about-work.png",
+    ],
+    videos: ["/videos/hero-bg.mp4"],
     featured: true,
     location: "Renovation Site, India",
     completedAt: "Recent Handover",
@@ -86,4 +103,3 @@ export const projectsData: Project[] = [
     ],
   },
 ];
-

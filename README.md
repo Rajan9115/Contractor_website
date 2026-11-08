@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shan Contracting & Interiors — Official Website
+
+A premium, responsive, SEO-ready portfolio and lead-generation website for an individual contractor in India offering **Electrical**, **Carpentry**, **Painting**, and **False Ceiling** services.
+
+Built strictly according to [AGENTS.md](AGENTS.md) and [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js 16.4.5 (App Router, Turbopack, Cache Components)
+- **Runtime:** React 19.3.0
+- **Styling:** Tailwind CSS v4 (`@theme` tokens in `app/globals.css`)
+- **Typography:** Manrope (Headings & Brand) + Inter (Body Copy) via `next/font/google`
+- **Icons:** Lucide React
+- **Language:** TypeScript 5.0 (Strict mode)
+- **Deployment Target:** Vercel / Node.js Server
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Run the development server from the `website/` directory:
 
 ```bash
+cd website
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to preview the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` — Starts local development server
+- `npx tsc --noEmit` — Type-checks all TypeScript files (Strict mode)
+- `npm run lint` — Validates code with ESLint
+- `npm run build` — Compiles and builds production static pages
+- `npm run start` — Serves the compiled production build locally
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Handover & Maintenance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For detailed instructions on updating contact facts, adding portfolio projects, editing services, replacing media, and deploying to production, please refer to:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👉 **[HANDOVER.md](HANDOVER.md)**
