@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
+@theme {
+  --font-heading: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-bg-base: #F7F5F0;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #E9E3D9;
+  --color-text-main: #172B40;
+  --color-text-muted: #687381;
+  --color-brand-primary: #172B40;
+  --color-brand-primary-hover: #101E2E;
+  --color-brand-accent: #B58A58;
+  --color-brand-accent-hover: #9E7444;
+  --color-brand-accent-light: #F5EFE6;
+  --color-border-main: #E5E0D7;
+  --color-border-strong: #D0C8BC;
+  --color-state-success: #21865B;
+  --color-state-error: #B42318;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #F7F5F0;
+  --surface: #FFFFFF;
+  --surface-muted: #E9E3D9;
+  --text-main: #172B40;
+  --text-muted: #687381;
+  --brand-primary: #172B40;
+  --brand-primary-hover: #101E2E;
+  --brand-accent: #B58A58;
+  --brand-accent-hover: #9E7444;
+  --brand-accent-light: #F5EFE6;
+  --border-main: #E5E0D7;
+  --border-strong: #D0C8BC;
+  --state-success: #21865B;
+  --state-error: #B42318;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F7F5F0;
+  color: #172B40;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
+  color: #172B40;
+}
+
+/* Accessible focus ring style */
+:focus-visible {
+  outline: 2px solid #B58A58;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

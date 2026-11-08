@@ -1,69 +1,175 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { TrustStrip } from "@/components/sections/TrustStrip";
+import { ServiceCard } from "@/components/services/ServiceCard";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { ProcessStep } from "@/components/sections/ProcessStep";
+import { HomeCTA } from "@/components/sections/HomeCTA";
+import { servicesData } from "@/data/services";
+import { projectsData } from "@/data/projects";
 
 export default function Home() {
+  const processSteps = [
+    {
+      number: "01",
+      title: "Initial Consultation",
+      description:
+        "We discuss your space, preferred trade requirements (electrical, woodwork, painting, ceiling), and project timeline via phone or WhatsApp.",
+      highlights: [
+        "Requirement scope definition",
+        "Initial feasibility review",
+        "Transparent guidance",
+      ],
+    },
+    {
+      number: "02",
+      title: "On-Site Inspection",
+      description:
+        "We visit your property for precise laser measurements, evaluate wall conditions, inspect existing wiring and plumbing runs.",
+      highlights: [
+        "Accurate laser dimensioning",
+        "Surface & load assessment",
+        "No-obligation site assessment",
+      ],
+    },
+    {
+      number: "03",
+      title: "Itemized Quotation",
+      description:
+        "Receive a clear, transparent cost estimate detailing material grades (plywood, cables, paints) and labor milestones.",
+      highlights: [
+        "Transparent material specifications",
+        "Clear labor breakdown",
+        "Milestone timeline agreed",
+      ],
+    },
+    {
+      number: "04",
+      title: "Supervised Execution",
+      description:
+        "Our skilled tradesmen execute the project with dedicated on-site contractor supervision, ensuring sequencing and safety compliance.",
+      highlights: [
+        "Cross-trade synchronization",
+        "Dust & floor protection",
+        "Regular progress updates",
+      ],
+    },
+    {
+      number: "05",
+      title: "Inspection & Handover",
+      description:
+        "We perform a detailed joint walkthrough, inspect touch-ups and switches, clear debris, and hand over a finished, spotless space.",
+      highlights: [
+        "Quality checklist sign-off",
+        "Thorough post-work clean-up",
+        "Handover of keys & instructions",
+      ],
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+    <div className="flex flex-col min-h-screen">
+      {/* 1. Hero Section */}
+      <HeroSection />
+
+      {/* 2. Trust Strip (Verified Facts Only) */}
+      <TrustStrip />
+
+      {/* 3. Four Core Services Cards */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+        <Container size="wide">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+            <SectionHeading
+              kicker="Specialized Disciplines"
+              title="Four Core Trades. One Accountable Team."
+              description="Each service is executed with dedicated tools, experienced craftsmen, and premium materials designed for long-term durability."
+              align="left"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <Button
+              variant="outline"
+              href="/services"
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+              className="shrink-0 self-start md:self-end"
+            >
+              All Service Details
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {servicesData.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. Featured Completed Projects */}
+      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+        <Container size="wide">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+            <SectionHeading
+              kicker="Authentic Portfolio"
+              title="Featured On-Site Work"
+              description="Browse genuine project photographs from completed residential and commercial jobs. Real workmanship, zero stock imagery."
+              align="left"
+            />
+            <Button
+              variant="primary"
+              href="/projects"
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+              className="shrink-0 self-start md:self-end"
+            >
+              Explore Full Gallery
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {projectsData.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 5. Why Choose Us (Factual Multi-Trade Advantages) */}
+      <WhyChooseUs />
+
+      {/* 6. Work Process (5 Clearly Defined Steps) */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+        <Container size="wide">
+          <SectionHeading
+            kicker="Execution Methodology"
+            title="Our Transparent 5-Step Process"
+            description="From initial concept to final handover, every phase is organized to ensure seamless trade sequencing, zero surprises, and on-time completion."
+            align="center"
+            className="mb-14 sm:mb-16"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {processSteps.map((step, idx) => (
+              <ProcessStep
+                key={idx}
+                number={step.number}
+                title={step.title}
+                description={step.description}
+                highlights={step.highlights}
+                isLast={idx === processSteps.length - 1}
+              />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 7. Genuine Testimonials: Omitted until supplied as per AGENTS.md rules */}
+
+      {/* 8. Pre-Footer High-Impact Enquiry CTA */}
+      <HomeCTA />
     </div>
   );
 }
