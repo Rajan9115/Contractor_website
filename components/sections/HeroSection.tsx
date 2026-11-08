@@ -24,23 +24,23 @@ export function HeroSection() {
           className="object-cover object-center"
         />
 
-        {/* Subtle multi-layer dark overlay for crystal-clear text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#172B40]/95 via-[#172B40]/80 to-[#172B40]/50" />
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Directional left-to-right vignette: strong contrast over text block, reveals scene on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* 2. Vertically Centered Content Layer (On Top of Background) */}
-      <div className="relative z-10 w-full pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24">
+      <div className="relative z-10 w-full pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-12">
         <Container size="wide">
-          <div className="max-w-3xl text-left space-y-6 sm:space-y-8">
+          <div className="max-w-2xl text-left space-y-6 sm:space-y-7">
             {/* Main Heading */}
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text- leading-[1.15] drop-shadow-md">
-              <span className="text-white">Built with Precision.{" "}</span>
-              <span className="block text-[#B58A58]">Finished to Perfection.</span>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] drop-shadow-md">
+              <span className="text-[#E5A855]">Built with Precision.{" "}</span>
+              <span className="block text-white">Finished to Perfection.</span>
             </h1>
 
             {/* Supporting Description / Subheading */}
-            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-normal drop-shadow-xs">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed font-normal drop-shadow-xs">
               Full-scope contracting across custom carpentry, modern false ceilings, certified wiring, and flawless painting. We turn bare spaces into refined environments with master craft and zero vendor friction.
             </p>
 
@@ -51,7 +51,7 @@ export function HeroSection() {
                 size="lg"
                 href="/projects"
                 rightIcon={<ArrowRight className="w-5 h-5" />}
-                className="shadow-lg"
+                className="shadow-lg bg-[#E5A855] hover:bg-[#D49544] text-[#172B40] font-semibold border-0"
               >
                 Explore Our Work
               </Button>
@@ -65,22 +65,21 @@ export function HeroSection() {
               >
                 Get a Free Estimate
               </Button>
-
             </div>
 
-            {/* Quick Proof Points */}
-            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-white/90 font-medium drop-shadow-sm">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
-                <span>Authentic On-Site Photos</span>
+            {/* Trust Badges Wrapped in Modern Glassmorphic Pills */}
+            <div className="pt-8 sm:pt-10 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs text-neutral-300">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-xs">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E5A855] shrink-0" />
+                <span className="font-medium">Authentic On-Site Photos</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
-                <span>Direct Contractor Supervision</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-xs">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E5A855] shrink-0" />
+                <span className="font-medium">Direct Contractor Supervision</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#B58A58] shrink-0" />
-                <span>Transparent Itemized Estimates</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-xs">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E5A855] shrink-0" />
+                <span className="font-medium">Transparent Itemized Estimates</span>
               </div>
             </div>
           </div>

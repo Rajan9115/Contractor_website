@@ -187,30 +187,21 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Quick CTA Actions */}
+            {/* Quick CTA Action (Single subtle outline button to avoid header conflict) */}
             <div className="flex items-center gap-3">
               <Button
-                variant="whatsapp"
+                variant="outline"
                 size="sm"
                 href={whatsappUrl}
                 isExternal
-                leftIcon={<MessageSquare className="w-4 h-4" />}
-                className="hidden sm:inline-flex"
-              >
-                WhatsApp Enquiry
-              </Button>
-
-              <Button
-                variant={isTransparent ? "outline" : "primary"}
-                size="sm"
-                href="/contact"
-                className={`hidden md:inline-flex ${
+                leftIcon={<MessageSquare className="w-4 h-4 text-[#25D366]" />}
+                className={`hidden sm:inline-flex ${
                   isTransparent
-                    ? "border-white/40 text-white hover:bg-white/15 hover:border-white shadow-xs"
-                    : ""
+                    ? "border-white/30 text-white hover:bg-white/10 hover:border-white/60 shadow-xs"
+                    : "border-[#21865B]/40 text-[#172B40] hover:bg-[#21865B]/10 hover:border-[#21865B]"
                 }`}
               >
-                Get an Estimate
+                WhatsApp
               </Button>
 
               {/* Mobile Hamburger Button */}

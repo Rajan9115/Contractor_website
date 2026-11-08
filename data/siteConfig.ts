@@ -17,17 +17,17 @@ export const contactConfig: SiteContactInfo = {
   businessName: "Shan Contracting & Interiors",
   tradingName: "Shan",
   tagline: "Electrical, Carpentry, Painting & False Ceiling Specialists",
-  phoneDisplay: "+91 (Pending Verification)",
-  phoneRaw: "", // Placeholder - to be updated once contractor provides verified number
-  whatsappDisplay: "+91 (Pending Verification)",
-  whatsappRaw: "", // International format e.g. 91XXXXXXXXXX
+  phoneDisplay: "+91 80818 70179",
+  phoneRaw: "+918081870179",
+  whatsappDisplay: "+91 80818 70179",
+  whatsappRaw: "918081870179",
   email: "enquiries@shancontractor.com", // Placeholder
   addressSummary: "Workshop & Operations, India",
   serviceAreaSummary: "Residential & Commercial Projects across City Metro",
   workingHours: "Mon - Sat: 9:00 AM – 7:30 PM",
   verifiedStatus: {
-    isPhoneVerified: false,
-    isWhatsAppVerified: false,
+    isPhoneVerified: true,
+    isWhatsAppVerified: true,
     isAddressVerified: false,
   },
 };
