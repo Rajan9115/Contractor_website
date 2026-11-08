@@ -76,3 +76,4 @@ export function ProjectCard({ project }: ProjectCardProps) {
     </div>
   );
 }
+

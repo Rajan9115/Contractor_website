@@ -5,7 +5,6 @@ interface ProcessStepProps {
   title: string;
   description: string;
   highlights: string[];
-  isLast?: boolean;
 }
 
 export function ProcessStep({
@@ -13,7 +12,6 @@ export function ProcessStep({
   title,
   description,
   highlights,
-  isLast = false,
 }: ProcessStepProps) {
   return (
     <div className="relative flex flex-col p-6 sm:p-7 rounded-xl bg-white border border-[#E5E0D7] shadow-sm transition-all duration-200 hover:shadow-md">

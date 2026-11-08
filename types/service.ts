@@ -14,3 +14,4 @@ export interface ServiceDetail {
   coverImage: string;
   iconName: "Zap" | "Hammer" | "Paintbrush" | "Layers";
 }
+

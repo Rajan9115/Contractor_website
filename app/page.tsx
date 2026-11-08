@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -159,7 +158,6 @@ export default function Home() {
                 title={step.title}
                 description={step.description}
                 highlights={step.highlights}
-                isLast={idx === processSteps.length - 1}
               />
             ))}
           </div>

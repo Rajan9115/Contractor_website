@@ -19,3 +19,4 @@ export interface Project {
   featured: boolean;
   scopeHighlights?: string[];
 }
+

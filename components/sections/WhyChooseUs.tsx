@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CheckCircle2, XCircle } from "lucide-react";
