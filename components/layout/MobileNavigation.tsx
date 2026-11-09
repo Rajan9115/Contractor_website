@@ -18,11 +18,15 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
   const pathname = usePathname();
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const prevPathnameRef = useRef(pathname);
 
-  // Close when pathname changes
+  // Close when pathname changes (user navigated to a different page)
   useEffect(() => {
-    if (isOpen) {
-      onClose();
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      if (isOpen) {
+        onClose();
+      }
     }
   }, [pathname, isOpen, onClose]);
 
@@ -48,21 +52,24 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   const whatsappLink = buildWhatsAppUrl();
   const telLink = buildTelUrl();
 
   return (
     <div
-      className="fixed inset-0 z-50 lg:hidden"
+      className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${
+        isOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
+      }`}
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation"
+      aria-hidden={!isOpen}
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-[#172B40]/50 backdrop-blur-sm transition-opacity duration-200"
+        className={`fixed inset-0 bg-[#172B40]/50 backdrop-blur-sm transition-opacity duration-300 ease-out ${
+          isOpen ? "opacity-100" : "opacity-0"
+        }`}
         onClick={onClose}
         aria-hidden="true"
       />
@@ -70,11 +77,17 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className="fixed inset-y-0 right-0 w-full max-w-sm bg-[#F7F5F0] shadow-2xl flex flex-col z-10 transition-transform duration-300 ease-out border-l border-[#E5E0D7]"
+        className={`fixed inset-y-0 right-0 w-full max-w-sm bg-[#F7F5F0] shadow-2xl flex flex-col z-10 transition-transform duration-300 ease-out border-l border-[#E5E0D7] ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E5E0D7] bg-[#FFFFFF]">
-          <div className="flex items-center gap-2.5">
+          <Link
+            href="/"
+            onClick={onClose}
+            className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58] rounded"
+          >
             <div className="relative w-8 h-8 shrink-0">
               <Image
                 src="/branding/symbol.svg"
@@ -92,7 +105,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 INTERIOR
               </span>
             </div>
-          </div>
+          </Link>
           <button
             ref={closeBtnRef}
             onClick={onClose}
@@ -116,6 +129,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <div key={item.href} className="py-1">
                   <Link
                     href={item.href}
+                    onClick={onClose}
                     className={`flex items-center justify-between py-2.5 px-3 rounded-md text-base font-medium transition-colors ${
                       isActive
                         ? "bg-[#E9E3D9] text-[#172B40] font-semibold"
@@ -135,6 +149,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                           <Link
                             key={sub.href}
                             href={sub.href}
+                            onClick={onClose}
                             className={`block py-1.5 px-2 text-sm rounded transition-colors ${
                               isSubActive
                                 ? "text-[#B58A58] font-semibold"
@@ -165,6 +180,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 isExternal
                 leftIcon={<MessageSquare className="w-4 h-4" />}
                 size="md"
+                onClick={onClose}
               >
                 Chat on WhatsApp
               </Button>
@@ -175,6 +191,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 isExternal={Boolean(contactConfig.phoneRaw)}
                 leftIcon={<Phone className="w-4 h-4" />}
                 size="md"
+                onClick={onClose}
               >
                 {contactConfig.phoneDisplay}
               </Button>
