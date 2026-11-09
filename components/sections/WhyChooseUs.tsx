@@ -21,7 +21,7 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section className="bg-[#F7F5F0] py-16 sm:py-24 border-b border-[#E5E0D7]">
+    <section className="bg-[#F7F5F0] py-8 sm:py-10 border-b border-[#E5E0D7]">
       <Container size="wide">
         <SectionHeading
           kicker="Quality & Accountability"

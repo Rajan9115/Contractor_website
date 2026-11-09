@@ -81,7 +81,7 @@ export default function Home() {
       <TrustStrip />
 
       {/* 3. Four Core Services Cards */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+      <section className="py-8 sm:py-10 bg-white border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
             <SectionHeading
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* 4. Featured Completed Projects */}
-      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-8 sm:py-10 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
             <SectionHeading
@@ -140,7 +140,7 @@ export default function Home() {
       <WhyChooseUs />
 
       {/* 6. Work Process (5 Clearly Defined Steps) */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+      <section className="py-8 sm:py-10 bg-white border-b border-[#E5E0D7]">
         <Container size="wide">
           <SectionHeading
             kicker="Execution Methodology"
