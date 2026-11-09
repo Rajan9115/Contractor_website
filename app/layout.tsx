@@ -23,12 +23,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.shortName} | Electrical, Carpentry, Painting & Ceiling Services`,
+    default: `${siteConfig.shortName} | Interior Decorator & Home Renovation Services`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.shortName} | Electrical, Carpentry, Painting & Ceiling Services`,
+    title: `${siteConfig.shortName} | Interior Decorator & Home Renovation Services`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustStrip } from "@/components/sections/TrustStrip";
-import { ServiceCard } from "@/components/services/ServiceCard";
+import { ServicesGrid } from "@/components/services/ServicesGrid";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessStep } from "@/components/sections/ProcessStep";
@@ -81,7 +81,7 @@ export default function Home() {
       <TrustStrip />
 
       {/* 3. Four Core Services Cards */}
-      <section className="py-8 sm:py-10 bg-white border-b border-[#E5E0D7]">
+      <section className="py-8 sm:py-10 bg-white border-b border-[#E5E0D7] overflow-hidden">
         <Container size="wide">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
             <SectionHeading
@@ -100,11 +100,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {servicesData.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
+          <ServicesGrid services={servicesData} />
         </Container>
       </section>
 

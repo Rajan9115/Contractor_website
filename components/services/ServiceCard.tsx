@@ -42,7 +42,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       {/* 1. Project Image (Consistent 210–230px Desktop Height) */}
       <Link
         href={serviceUrl}
-        className="relative h-[215px] sm:h-[220px] lg:h-[242px] w-full shrink-0 overflow-hidden bg-[#E9E3D9] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58]"
+        className="relative h-[215px] sm:h-[220px] lg:h-[220px] w-full shrink-0 overflow-hidden bg-[#E9E3D9] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58]"
         tabIndex={-1}
         aria-hidden="true"
       >
@@ -51,7 +51,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
           alt={`Contractor work for ${service.title}`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035] motion-reduce:transform-none"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transform-none"
         />
 
         {/* Subtle Bottom Gradient Overlay for Visual Depth */}
