@@ -8,6 +8,7 @@ export interface ServiceDetail {
   headline: string;
   description: string;
   summary: string;
+  specialties?: string[];
   subcategories: string[];
   features: string[];
   processSummary: string[];

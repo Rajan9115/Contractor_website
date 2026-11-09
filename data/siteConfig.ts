@@ -1,8 +1,8 @@
 import { NavItem, SiteContactInfo } from "@/types/navigation";
 
 export const siteConfig = {
-  name: "Shan Contracting & Interiors",
-  shortName: "Shan",
+  name: "MAMA INTERIOR",
+  shortName: "MAMA",
   tagline: "Electrical • Carpentry • Painting • Ceiling",
   description:
     "Premium contracting and interior finishing services in India. Specializing in high-grade Electrical, Carpentry, Painting, and Ceiling solutions.",
@@ -14,8 +14,8 @@ export const siteConfig = {
  * As per AGENTS.md, unverified details are flagged and presented as placeholders.
  */
 export const contactConfig: SiteContactInfo = {
-  businessName: "Shan Contracting & Interiors",
-  tradingName: "Shan",
+  businessName: "MAMA INTERIOR",
+  tradingName: "MAMA INTERIOR",
   tagline: "Electrical, Carpentry, Painting & False Ceiling Specialists",
   phoneDisplay: "+91 80818 70179",
   phoneRaw: "+918081870179",

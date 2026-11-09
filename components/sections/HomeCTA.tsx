@@ -10,7 +10,7 @@ export function HomeCTA() {
   const telUrl = buildTelUrl();
 
   return (
-    <section className="bg-[#172B40] text-white py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section className="bg-[#172B40] text-white py-8 sm:py-10 lg:py-12 relative overflow-hidden">
       {/* Decorative Warm Accent Blur */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#B58A58]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#B58A58]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
@@ -21,7 +21,7 @@ export function HomeCTA() {
         </span>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-          Have an Interior or Renovation Project in Mind?
+          <span className="text-[#B58A58]">Have an Interior or Renovation Project in Mind?</span>
         </h2>
 
         <p className="mt-5 text-base sm:text-lg text-[#E9E3D9]/80 leading-relaxed max-w-2xl mx-auto">

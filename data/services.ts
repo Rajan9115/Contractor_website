@@ -8,7 +8,15 @@ export const servicesData: ServiceDetail[] = [
     shortTitle: "Electrical",
     headline: "Safe, precision electrical engineering and architectural illumination",
     summary:
-      "Complete residential and commercial electrification, including concealed conduits, distribution board balancing, safety breakers, and designer light fixture installations.",
+      "Residential and commercial electrification, including concealed conduits, distribution board balancing, safety breakers, and architectural illumination.",
+    specialties: [
+      "Concealed House Wiring",
+      "Modular Switchboards",
+      "Architectural Lighting",
+      "Distribution Boards (DB/MCB)",
+      "Appliance Load Provisioning",
+      "Diagnostic Rewiring",
+    ],
     description:
       "Reliable electrical infrastructure is the backbone of any modern space. We handle end-to-end concealed wiring, modular switchboard placement, high-load appliance circuits, and ambient architectural lighting with strict safety compliance.",
     subcategories: [
@@ -41,7 +49,15 @@ export const servicesData: ServiceDetail[] = [
     shortTitle: "Carpentry",
     headline: "Bespoke modular cabinetry, elegant wardrobes & architectural woodwork",
     summary:
-      "Made-to-measure storage solutions, modern modular kitchens, custom wardrobes, TV console units, and durable solid-wood doors engineered for everyday longevity.",
+      "Bespoke modular kitchens, custom wardrobes, TV entertainment units, and handcrafted woodwork engineered for everyday longevity.",
+    specialties: [
+      "Modular Kitchens",
+      "Custom Wardrobes",
+      "TV Entertainment Units",
+      "Solid Wood Doors",
+      "Study Workspaces",
+      "Veneer & Acrylic Finishes",
+    ],
     description:
       "Crafted with precision joinery and high-grade ply, our carpentry services turn open walls into functional, aesthetic storage. Every hinge, channel, and veneer finish is fitted with cabinet-maker accuracy.",
     subcategories: [
@@ -74,7 +90,15 @@ export const servicesData: ServiceDetail[] = [
     shortTitle: "Painting",
     headline: "Flawless wall preparation, luxury textures & exterior protection",
     summary:
-      "Ultra-smooth interior wall finishes, designer accent textures, anti-fungal waterproofing basecoats, and rich wood polish applied with expert technique.",
+      "Flawless interior wall finishes, designer accent textures, anti-fungal primers, and rich wood polish applied with expert technique.",
+    specialties: [
+      "Luxury Wall Emulsion",
+      "Designer Accent Textures",
+      "Wood Polish & PU",
+      "Weather-Shield Exterior",
+      "Wall Putty & Surface Prep",
+      "Waterproofing Basecoats",
+    ],
     description:
       "A lasting paint finish relies 80% on preparation. We ensure walls are sanded true, cracks sealed, and high-quality primers applied before applying premium emulsion or texture coats.",
     subcategories: [
@@ -107,7 +131,15 @@ export const servicesData: ServiceDetail[] = [
     shortTitle: "Ceiling",
     headline: "Aesthetic gypsum false ceilings, perimeter coves & acoustic layouts",
     summary:
-      "Contemporary false ceiling designs featuring seamless gypsum boards, Plaster of Paris (POP) details, perimeter cove lighting, and acoustic insulation.",
+      "Modern false ceiling designs featuring seamless gypsum boards, POP detailing, ambient cove lighting, and acoustic insulation.",
+    specialties: [
+      "Gypsum Board Ceilings",
+      "POP Designer Moldings",
+      "Perimeter Cove Lighting",
+      "Multi-Tier Drop Islands",
+      "Acoustic Insulation",
+      "Commercial Grid Ceilings",
+    ],
     description:
       "Transform the ambiance and temperature of your interiors with modern false ceilings. We design and install durable metal frame grids, concealed light troughs, and clean peripheral drop ceilings.",
     subcategories: [
