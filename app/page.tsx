@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { ServicesGrid } from "@/components/services/ServicesGrid";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessStep } from "@/components/sections/ProcessStep";
 import { HomeCTA } from "@/components/sections/HomeCTA";
@@ -104,33 +104,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 4. Featured Completed Projects */}
-      <section className="py-8 sm:py-10 bg-[#F7F5F0] border-b border-[#E5E0D7]">
-        <Container size="wide">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-            <SectionHeading
-              kicker="Authentic Portfolio"
-              title="Featured On-Site Work"
-              description="Browse genuine project photographs from completed residential and commercial jobs. Real workmanship, zero stock imagery."
-              align="left"
-            />
-            <Button
-              variant="primary"
-              href="/projects"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-              className="shrink-0 self-start md:self-end"
-            >
-              Explore Full Gallery
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {projectsData.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* 4. Featured Completed Projects (Authentic Portfolio) */}
+      <PortfolioSection projects={projectsData} />
 
       {/* 5. Why Choose Us (Factual Multi-Trade Advantages) */}
       <WhyChooseUs />
