@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,10 @@ export function SiteHeader() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  const handleCloseMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
 
   const isHomepage = pathname === "/";
   const isTransparent = isHomepage && !isScrolled;
@@ -224,13 +228,13 @@ export function SiteHeader() {
             </div>
           </div>
         </Container>
-
-        {/* Mobile Drawer */}
-        <MobileNavigation
-          isOpen={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
-        />
       </header>
+
+      {/* Mobile Drawer (hoisted outside header to avoid stacking context confinement) */}
+      <MobileNavigation
+        isOpen={mobileMenuOpen}
+        onClose={handleCloseMobileMenu}
+      />
 
       {/* Spacer for Subpages so content starts below fixed navbar (Zero spacer on Homepage) */}
       {!isHomepage && <div className="h-20 shrink-0" aria-hidden="true" />}
