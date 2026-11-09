@@ -35,7 +35,7 @@ export function HeroSection() {
           <div className="max-w-2xl text-left space-y-6 sm:space-y-7">
             {/* Main Heading */}
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] drop-shadow-md">
-              <span className="text-[#E5A855]">Built with Precision.{" "}</span>
+              <span className="text-[#E5A855]">Built with Precision.</span>
               <span className="block text-white">Finished to Perfection.</span>
             </h1>
 

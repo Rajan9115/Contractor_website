@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, MessageSquare, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { mainNavItems, siteConfig } from "@/data/siteConfig";
+import { mainNavItems } from "@/data/siteConfig";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { MobileNavigation } from "./MobileNavigation";
 
@@ -51,38 +52,47 @@ export function SiteHeader() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ease-in-out ${
-          isTransparent
+        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ease-in-out ${isTransparent
             ? "bg-transparent border-b border-transparent text-white"
             : "bg-[#F7F5F0]/95 backdrop-blur-md border-b border-[#E5E0D7] text-[#172B40] shadow-xs"
-        }`}
+          }`}
       >
         <Container size="wide">
           <div className="flex h-20 items-center justify-between">
             {/* Logo / Brand Name */}
             <Link
               href="/"
-              className="flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58] rounded px-1 -mx-1"
+              className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5685C5] rounded px-1 -mx-1"
             >
-              <div className="flex items-center gap-1.5">
-                <span
-                  className={`font-heading text-2xl font-black tracking-tight uppercase transition-colors duration-200 ${
-                    isTransparent ? "text-white drop-shadow-sm" : "text-[#172B40]"
-                  }`}
-                >
-                  {siteConfig.shortName}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-[#B58A58] inline-block" />
+              <div className="relative w-18 h-18 shrink-0">
+                <Image
+                  src="/branding/symbol.svg"
+                  alt="MAMA INTERIOR Logo"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-contain transition-transform duration-200 group-hover:scale-105"
+                  priority
+                />
               </div>
-              <span
-                className={`text-[10px] sm:text-[11px] font-medium tracking-widest uppercase -mt-0.5 transition-colors duration-200 ${
-                  isTransparent
-                    ? "text-white/80 group-hover:text-[#B58A58]"
-                    : "text-[#687381] group-hover:text-[#B58A58]"
-                }`}
-              >
-                Contracting & Interiors
-              </span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span
+                    className={`font-heading text-xl sm:text-2xl font-black tracking-wider uppercase transition-colors duration-200 ${isTransparent ? "text-white drop-shadow-sm" : "text-[#243B53]"
+                      }`}
+                  >
+                    MAMA
+                  </span>
+
+                </div>
+                <span
+                  className={`text-[9px] sm:text-[10px] font-semibold tracking-[0.28em] uppercase -mt-0.5 transition-colors duration-200 ${isTransparent
+                      ? "text-white/80 group-hover:text-[#5685C5]"
+                      : "text-[#5685C5] group-hover:text-[#243B53]"
+                    }`}
+                >
+                  INTERIOR
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -107,21 +117,19 @@ export function SiteHeader() {
                     >
                       <Link
                         href={item.href}
-                        className={`inline-flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
-                          isTransparent
+                        className={`inline-flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${isTransparent
                             ? isActive
                               ? "text-white bg-white/20 font-semibold"
                               : "text-white/90 hover:text-white hover:bg-white/10"
                             : isActive
-                            ? "text-[#172B40] bg-[#E9E3D9] font-semibold"
-                            : "text-[#172B40] hover:text-[#B58A58] hover:bg-[#FFFFFF]"
-                        }`}
+                              ? "text-[#172B40] bg-[#E9E3D9] font-semibold"
+                              : "text-[#172B40] hover:text-[#B58A58] hover:bg-[#FFFFFF]"
+                          }`}
                       >
                         <span>{item.title}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            servicesDropdownOpen ? "rotate-180" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180" : ""
+                            }`}
                         />
                       </Link>
 
@@ -135,11 +143,10 @@ export function SiteHeader() {
                                 <Link
                                   key={sub.href}
                                   href={sub.href}
-                                  className={`block px-3 py-2 rounded-md transition-colors ${
-                                    isSubActive
+                                  className={`block px-3 py-2 rounded-md transition-colors ${isSubActive
                                       ? "bg-[#F7F5F0] text-[#B58A58]"
                                       : "hover:bg-[#F7F5F0] text-[#172B40]"
-                                  }`}
+                                    }`}
                                 >
                                   <div className="text-sm font-medium">
                                     {sub.title}
@@ -171,15 +178,14 @@ export function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
-                      isTransparent
+                    className={`px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${isTransparent
                         ? isActive
                           ? "text-white bg-white/20 font-semibold"
                           : "text-white/90 hover:text-white hover:bg-white/10"
                         : isActive
-                        ? "text-[#172B40] bg-[#E9E3D9] font-semibold"
-                        : "text-[#172B40] hover:text-[#B58A58] hover:bg-[#FFFFFF]"
-                    }`}
+                          ? "text-[#172B40] bg-[#E9E3D9] font-semibold"
+                          : "text-[#172B40] hover:text-[#B58A58] hover:bg-[#FFFFFF]"
+                      }`}
                   >
                     {item.title}
                   </Link>
@@ -195,11 +201,10 @@ export function SiteHeader() {
                 href={whatsappUrl}
                 isExternal
                 leftIcon={<MessageSquare className="w-4 h-4 text-[#25D366]" />}
-                className={`hidden sm:inline-flex ${
-                  isTransparent
+                className={`hidden sm:inline-flex ${isTransparent
                     ? "border-white/30 text-white hover:bg-white/10 hover:border-white/60 shadow-xs"
                     : "border-[#21865B]/40 text-[#172B40] hover:bg-[#21865B]/10 hover:border-[#21865B]"
-                }`}
+                  }`}
               >
                 WhatsApp
               </Button>
@@ -209,11 +214,10 @@ export function SiteHeader() {
                 onClick={() => setMobileMenuOpen(true)}
                 aria-label="Open navigation menu"
                 aria-expanded={mobileMenuOpen}
-                className={`lg:hidden p-2 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58] ${
-                  isTransparent
+                className={`lg:hidden p-2 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A58] ${isTransparent
                     ? "text-white hover:bg-white/15"
                     : "text-[#172B40] hover:text-[#B58A58] hover:bg-[#FFFFFF]"
-                }`}
+                  }`}
               >
                 <Menu className="w-6 h-6" />
               </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { X, Phone, MessageSquare, ChevronRight } from "lucide-react";
@@ -73,13 +74,24 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E5E0D7] bg-[#FFFFFF]">
-          <div className="flex flex-col">
-            <span className="font-bold text-lg text-[#172B40] tracking-tight">
-              {siteConfig.shortName}
-            </span>
-            <span className="text-xs text-[#B58A58] font-medium tracking-wide">
-              Contracting & Interiors
-            </span>
+          <div className="flex items-center gap-2.5">
+            <div className="relative w-8 h-8 shrink-0">
+              <Image
+                src="/branding/symbol.svg"
+                alt="MAMA INTERIOR Logo"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-lg text-[#243B53] tracking-tight">
+                MAMA
+              </span>
+              <span className="text-[10px] text-[#5685C5] font-semibold tracking-[0.25em] uppercase -mt-0.5">
+                INTERIOR
+              </span>
+            </div>
           </div>
           <button
             ref={closeBtnRef}

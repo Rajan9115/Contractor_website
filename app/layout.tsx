@@ -40,6 +40,17 @@ export const metadata: Metadata = {
     title: `${siteConfig.shortName} | Electrical, Carpentry, Painting & Ceiling Services`,
     description: siteConfig.description,
   },
+  icons: {
+    icon: [
+      { url: "/branding/favicon.ico", sizes: "any" },
+      { url: "/branding/favicon.svg", type: "image/svg+xml" },
+      { url: "/branding/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/branding/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/branding/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
