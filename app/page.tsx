@@ -6,72 +6,14 @@ import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { ServicesGrid } from "@/components/services/ServicesGrid";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { ProcessStep } from "@/components/sections/ProcessStep";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { HomeCTA } from "@/components/sections/HomeCTA";
 import { servicesData } from "@/data/services";
 import { projectsData } from "@/data/projects";
 
 export default function Home() {
-  const processSteps = [
-    {
-      number: "01",
-      title: "Initial Consultation",
-      description:
-        "We discuss your space, preferred trade requirements (electrical, woodwork, painting, ceiling), and project timeline via phone or WhatsApp.",
-      highlights: [
-        "Requirement scope definition",
-        "Initial feasibility review",
-        "Transparent guidance",
-      ],
-    },
-    {
-      number: "02",
-      title: "On-Site Inspection",
-      description:
-        "We visit your property for precise laser measurements, evaluate wall conditions, inspect existing wiring and plumbing runs.",
-      highlights: [
-        "Accurate laser dimensioning",
-        "Surface & load assessment",
-        "No-obligation site assessment",
-      ],
-    },
-    {
-      number: "03",
-      title: "Itemized Quotation",
-      description:
-        "Receive a clear, transparent cost estimate detailing material grades (plywood, cables, paints) and labor milestones.",
-      highlights: [
-        "Transparent material specifications",
-        "Clear labor breakdown",
-        "Milestone timeline agreed",
-      ],
-    },
-    {
-      number: "04",
-      title: "Supervised Execution",
-      description:
-        "Our skilled tradesmen execute the project with dedicated on-site contractor supervision, ensuring sequencing and safety compliance.",
-      highlights: [
-        "Cross-trade synchronization",
-        "Dust & floor protection",
-        "Regular progress updates",
-      ],
-    },
-    {
-      number: "05",
-      title: "Inspection & Handover",
-      description:
-        "We perform a detailed joint walkthrough, inspect touch-ups and switches, clear debris, and hand over a finished, spotless space.",
-      highlights: [
-        "Quality checklist sign-off",
-        "Thorough post-work clean-up",
-        "Handover of keys & instructions",
-      ],
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
@@ -104,61 +46,14 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 4. Featured Completed Projects */}
-      <section className="py-8 sm:py-10 bg-[#F7F5F0] border-b border-[#E5E0D7]">
-        <Container size="wide">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-            <SectionHeading
-              kicker="Authentic Portfolio"
-              title="Featured On-Site Work"
-              description="Browse genuine project photographs from completed residential and commercial jobs. Real workmanship, zero stock imagery."
-              align="left"
-            />
-            <Button
-              variant="primary"
-              href="/projects"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-              className="shrink-0 self-start md:self-end"
-            >
-              Explore Full Gallery
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {projectsData.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* 4. Featured Completed Projects (Authentic Portfolio) */}
+      <PortfolioSection projects={projectsData} />
 
       {/* 5. Why Choose Us (Factual Multi-Trade Advantages) */}
       <WhyChooseUs />
 
       {/* 6. Work Process (5 Clearly Defined Steps) */}
-      <section className="py-8 sm:py-10 bg-white border-b border-[#E5E0D7]">
-        <Container size="wide">
-          <SectionHeading
-            kicker="Execution Methodology"
-            title="Our Transparent 5-Step Process"
-            description="From initial concept to final handover, every phase is organized to ensure seamless trade sequencing, zero surprises, and on-time completion."
-            align="center"
-            className="mb-14 sm:mb-16"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {processSteps.map((step, idx) => (
-              <ProcessStep
-                key={idx}
-                number={step.number}
-                title={step.title}
-                description={step.description}
-                highlights={step.highlights}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ProcessSection />
 
       {/* 7. Genuine Testimonials: Omitted until supplied as per AGENTS.md rules */}
 
