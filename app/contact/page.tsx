@@ -35,7 +35,7 @@ export default function ContactPage() {
       />
 
       {/* 2. Form & Contact Details Section */}
-      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left 7 Columns: Interactive Enquiry Form */}

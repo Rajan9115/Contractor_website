@@ -51,20 +51,20 @@ export default function ProjectsPage() {
       />
 
       {/* 2. Interactive Filterable Gallery Section */}
-      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <ProjectsGalleryView initialProjects={projectsData} />
         </Container>
       </section>
 
       {/* 3. Pre-Footer Call to Action */}
-      <section className="bg-[#172B40] text-white py-16 sm:py-20">
+      <section className="bg-[#172B40] text-white py-4 sm:py-8">
         <Container className="text-center max-w-3xl">
           <span className="inline-block text-xs uppercase tracking-widest font-semibold text-[#B58A58] mb-2">
             Direct Discussion
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-            Inspired by Any of Our Completed Projects?
+            <span className="text-[#B58A58]">Inspired by Any of Our Completed Projects?</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#E9E3D9]/80 leading-relaxed">
             Send us screenshots of the designs or finishes you like directly on WhatsApp. We will discuss feasibility, material selections, and provide an itemized estimate.
