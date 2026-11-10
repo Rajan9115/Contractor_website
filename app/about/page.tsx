@@ -107,7 +107,7 @@ export default function AboutPage() {
       />
 
       {/* 2. Contractor Philosophy & Authentic Photo Section */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-white border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left: Authentic On-Site Photo */}
@@ -181,7 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Core Craftsmanship Pillars */}
-      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <SectionHeading
             kicker="Our Pillars"
@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Sequential Trade Delivery Matrix */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-white border-b border-[#E5E0D7]">
         <Container size="wide">
           <SectionHeading
             kicker="Methodology"
@@ -250,7 +250,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Service Area & Facts Reassurance */}
-      <section className="py-14 sm:py-16 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#E5E0D7] shadow-sm max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center md:text-left">
@@ -281,13 +281,13 @@ export default function AboutPage() {
       </section>
 
       {/* 6. Pre-Footer Action Banner */}
-      <section className="bg-[#172B40] text-white py-16 sm:py-20">
+      <section className="bg-[#172B40] text-white py-4 sm:py-8">
         <Container className="text-center max-w-3xl">
           <span className="inline-block text-xs uppercase tracking-widest font-semibold text-[#B58A58] mb-2">
             Get In Touch
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-            Ready to Discuss Your Space With the Contractor?
+            <span className="text-[#B58A58]">Ready to Discuss Your Space With the Contractor?</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#E9E3D9]/80 leading-relaxed">
             Message us on WhatsApp with your room dimensions or plan an in-person site inspection.

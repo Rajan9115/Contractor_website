@@ -75,7 +75,7 @@ export default function ServicesPage() {
       />
 
       {/* 2. Grid of Four Core Services */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-white border-b border-[#E5E0D7]">
         <Container size="wide">
           <SectionHeading
             kicker="Our Disciplines"
@@ -94,7 +94,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. Cross-Trade Coordination Workflow */}
-      <section className="py-16 sm:py-24 bg-[#F7F5F0] border-b border-[#E5E0D7]">
+      <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E5E0D7] text-xs font-semibold text-[#172B40] mb-3">
@@ -143,13 +143,13 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. Pre-Footer Call to Action */}
-      <section className="bg-[#172B40] text-white py-16 sm:py-20">
+      <section className="bg-[#172B40] text-white py-4 sm:py-8">
         <Container className="text-center max-w-3xl">
           <span className="inline-block text-xs uppercase tracking-widest font-semibold text-[#B58A58] mb-2">
             Get an Estimate
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-            Planning a Renovation or Fit-Out Project?
+            <span className="text-[#B58A58]">Planning a Renovation or Fit-Out Project?</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#E9E3D9]/80 leading-relaxed">
             Discuss your requirements directly with the contractor. Send photos, blueprints, or book an on-site visit for a detailed, itemized quotation.
