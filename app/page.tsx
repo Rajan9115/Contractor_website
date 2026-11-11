@@ -11,9 +11,11 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { HomeCTA } from "@/components/sections/HomeCTA";
 import { servicesData } from "@/data/services";
-import { projectsData } from "@/data/projects";
+import { fetchHomepageContent } from "@/lib/api/public-client";
 
-export default function Home() {
+export default async function Home() {
+  const { featuredProjects } = await fetchHomepageContent();
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
@@ -47,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* 4. Featured Completed Projects (Authentic Portfolio) */}
-      <PortfolioSection projects={projectsData} />
+      <PortfolioSection projects={featuredProjects} />
 
       {/* 5. Why Choose Us (Factual Multi-Trade Advantages) */}
       <WhyChooseUs />

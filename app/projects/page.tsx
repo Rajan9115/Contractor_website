@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { ProjectsGalleryView } from "@/components/projects/ProjectsGalleryView";
-import { projectsData } from "@/data/projects";
+import { fetchPublishedProjects } from "@/lib/api/public-client";
 import { buildWhatsAppUrl, buildTelUrl } from "@/lib/whatsapp";
 import { contactConfig } from "@/data/siteConfig";
 import { MessageSquare, ArrowRight, Phone } from "lucide-react";
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "Browse authentic on-site photos and videos from real contracting projects in India: concealed wiring, modular woodwork, luxury painting, and false ceilings.",
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await fetchPublishedProjects();
   const whatsappUrl = buildWhatsAppUrl();
   const telUrl = buildTelUrl();
 
@@ -53,7 +54,7 @@ export default function ProjectsPage() {
       {/* 2. Interactive Filterable Gallery Section */}
       <section className="py-4 sm:py-8 bg-[#F7F5F0] border-b border-[#E5E0D7]">
         <Container size="wide">
-          <ProjectsGalleryView initialProjects={projectsData} />
+          <ProjectsGalleryView initialProjects={projects} />
         </Container>
       </section>
 

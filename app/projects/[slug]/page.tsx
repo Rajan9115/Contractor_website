@@ -8,7 +8,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MediaGallery } from "@/components/projects/MediaGallery";
 import { VideoCard } from "@/components/projects/VideoCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
-import { projectsData } from "@/data/projects";
+import {
+  fetchPublishedProjects,
+  fetchPublishedProjectBySlug,
+} from "@/lib/api/public-client";
 import { buildWhatsAppUrl, buildTelUrl } from "@/lib/whatsapp";
 import { contactConfig } from "@/data/siteConfig";
 import {
@@ -27,14 +30,15 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return projectsData.map((project) => ({
+  const projects = await fetchPublishedProjects();
+  return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = projectsData.find((p) => p.slug === slug);
+  const project = await fetchPublishedProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -50,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
-  const project = projectsData.find((p) => p.slug === slug);
+  const project = await fetchPublishedProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -62,7 +66,8 @@ export default async function ProjectDetailPage({ params }: Props) {
   });
   const telUrl = buildTelUrl();
 
-  const relatedProjects = projectsData
+  const allProjects = await fetchPublishedProjects();
+  const relatedProjects = allProjects
     .filter((p) => p.category === project.category && p.slug !== project.slug)
     .slice(0, 3);
 

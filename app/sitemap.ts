@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/siteConfig";
 import { servicesData } from "@/data/services";
-import { projectsData } from "@/data/projects";
+import { fetchPublishedProjects } from "@/lib/api/public-client";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url.replace(/\/$/, "");
   const lastModified = new Date("2026-11-08");
 
@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Project Detail Routes
-  const projectRoutes: MetadataRoute.Sitemap = projectsData.map((proj) => ({
+  const projectRoutes: MetadataRoute.Sitemap = (await fetchPublishedProjects()).map((proj) => ({
     url: `${baseUrl}/projects/${proj.slug}`,
     lastModified,
     changeFrequency: "monthly",
